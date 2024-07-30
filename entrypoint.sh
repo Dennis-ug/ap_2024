@@ -13,7 +13,7 @@ python manage.py migrate --no-input
 
 echo "Starting server"
 echo "================================================================="
-gunicorn gunicorn --bind 0.0.0.0:8000 ap_website.wsgi:application
+gunicorn gunicorn ap_website.wsgi:application --bind 0.0.0.0:8000
 
 
 
