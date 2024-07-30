@@ -5,7 +5,7 @@ FROM python:3.8.1-slim-buster
 RUN useradd wagtail
 
 # Port used by this container to serve HTTP.
-EXPOSE 8000
+EXPOSE 8081
 
 # Set environment variables.
 # 1. Force Python stdout and stderr streams to be unbuffered.
