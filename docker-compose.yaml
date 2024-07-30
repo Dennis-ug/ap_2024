@@ -13,7 +13,7 @@ services:
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.web_alvin.rule=Host(`alvinandpartners.com`)"
-      - "traefik.http.routers.web_alvin.entrypoints=web"
+      - "traefik.http.routers.web_alvin.entrypoints=websecure"
       - "traefik.http.routers.web_alvin.tls=true"
       - "traefik.http.routers.web_alvin.tls.certresolver=production"
     networks:
