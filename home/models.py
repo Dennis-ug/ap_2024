@@ -11,11 +11,12 @@ from streams import block
 class HomePage(Page):
     templates = "home/home_page.html"
 
-    banner_title = models.CharField(max_length=100, blank=False, null=True);
-    banner_sub_title = models.CharField(max_length=100, blank=False, null=True);
+    banner_title = models.CharField(max_length=100, blank=False, null=True)
+    banner_sub_title = models.CharField(max_length=100, blank=False, null=True)
     about_information = models.TextField(max_length=5000, blank=False, null=True)
-    contact = models.CharField(max_length=100, blank=False, null=True);
-    email = models.CharField(max_length=100, blank=False, null=True);
+    contact = models.CharField(max_length=100, blank=False, null=True)
+    email = models.CharField(max_length=100, blank=False, null=True)
+    address = models.CharField(max_length=100, blank=False, null=True)
 
     content = StreamField(
         [
@@ -32,7 +33,8 @@ class HomePage(Page):
         FieldPanel("about_information"),
         FieldPanel("content"),
         FieldPanel("contact"),
-        FieldPanel("email")
+        FieldPanel("email"),
+        FieldPanel("address")
 
     ]
 

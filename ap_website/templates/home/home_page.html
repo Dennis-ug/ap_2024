@@ -1,5 +1,6 @@
 {%extends "base.html"%}
 {% load static wagtailcore_tags wagtailuserbar %}
+{% load wagtailcore_tags %}
 {%block content%}
 
   <main class="main">
@@ -125,14 +126,14 @@
             }
           </script>
           <div class="swiper-wrapper align-items-center">
-            <div class="swiper-slide"><img src="assets/img/clients/client-1.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-2.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-3.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-4.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-5.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-6.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-7.png" class="img-fluid" alt=""></div>
-            <div class="swiper-slide"><img src="assets/img/clients/client-8.png" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-1.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-2.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-3.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-4.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-5.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-6.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-7.png' %}" class="img-fluid" alt=""></div>
+            <div class="swiper-slide"><img src="{% static 'assets/img/clients/client-8.png' %}" class="img-fluid" alt=""></div>
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -618,77 +619,81 @@
 
         <div class="row gy-4">
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
+          {% for block in self.content %}
+              {% include_block block %}
+          {% endfor %}
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
+<!--          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="100">-->
+<!--            <div class="team-member">-->
+<!--              <div class="member-img">-->
+<!--                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">-->
+<!--                <div class="social">-->
+<!--                  <a href=""><i class="bi bi-twitter-x"></i></a>-->
+<!--                  <a href=""><i class="bi bi-facebook"></i></a>-->
+<!--                  <a href=""><i class="bi bi-instagram"></i></a>-->
+<!--                  <a href=""><i class="bi bi-linkedin"></i></a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="member-info">-->
+<!--                <h4>Walter White</h4>-->
+<!--                <span>Chief Executive Officer</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>&lt;!&ndash; End Team Member &ndash;&gt;-->
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
+<!--          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="200">-->
+<!--            <div class="team-member">-->
+<!--              <div class="member-img">-->
+<!--                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">-->
+<!--                <div class="social">-->
+<!--                  <a href=""><i class="bi bi-twitter-x"></i></a>-->
+<!--                  <a href=""><i class="bi bi-facebook"></i></a>-->
+<!--                  <a href=""><i class="bi bi-instagram"></i></a>-->
+<!--                  <a href=""><i class="bi bi-linkedin"></i></a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="member-info">-->
+<!--                <h4>Sarah Jhonson</h4>-->
+<!--                <span>Product Manager</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>&lt;!&ndash; End Team Member &ndash;&gt;-->
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">
-            <div class="team-member">
-              <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="bi bi-twitter-x"></i></a>
-                  <a href=""><i class="bi bi-facebook"></i></a>
-                  <a href=""><i class="bi bi-instagram"></i></a>
-                  <a href=""><i class="bi bi-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
-              </div>
-            </div>
-          </div><!-- End Team Member -->
+<!--          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="300">-->
+<!--            <div class="team-member">-->
+<!--              <div class="member-img">-->
+<!--                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">-->
+<!--                <div class="social">-->
+<!--                  <a href=""><i class="bi bi-twitter-x"></i></a>-->
+<!--                  <a href=""><i class="bi bi-facebook"></i></a>-->
+<!--                  <a href=""><i class="bi bi-instagram"></i></a>-->
+<!--                  <a href=""><i class="bi bi-linkedin"></i></a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="member-info">-->
+<!--                <h4>William Anderson</h4>-->
+<!--                <span>CTO</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>&lt;!&ndash; End Team Member &ndash;&gt;-->
+
+<!--          <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up" data-aos-delay="400">-->
+<!--            <div class="team-member">-->
+<!--              <div class="member-img">-->
+<!--                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">-->
+<!--                <div class="social">-->
+<!--                  <a href=""><i class="bi bi-twitter-x"></i></a>-->
+<!--                  <a href=""><i class="bi bi-facebook"></i></a>-->
+<!--                  <a href=""><i class="bi bi-instagram"></i></a>-->
+<!--                  <a href=""><i class="bi bi-linkedin"></i></a>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="member-info">-->
+<!--                <h4>Amanda Jepson</h4>-->
+<!--                <span>Accountant</span>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </div>&lt;!&ndash; End Team Member &ndash;&gt;-->
 
         </div>
 
@@ -718,7 +723,7 @@
               <i class="bi bi-geo-alt flex-shrink-0"></i>
               <div>
                 <h3>Address</h3>
-                <p>A108 Adam Street, New York, NY 535022</p>
+                <p>{{self.address}}</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -726,7 +731,7 @@
               <i class="bi bi-telephone flex-shrink-0"></i>
               <div>
                 <h3>Call Us</h3>
-                <p>+1 5589 55488 55</p>
+                <p>{{self.contact}}</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -734,7 +739,7 @@
               <i class="bi bi-envelope flex-shrink-0"></i>
               <div>
                 <h3>Email Us</h3>
-                <p>info@example.com</p>
+                <p>{{self.email}}</p>
               </div>
             </div><!-- End Info Item -->
 
@@ -780,81 +785,8 @@
 
   </main>
 
-  <footer id="footer" class="footer">
 
-    <div class="footer-top">
-      <div class="container">
-        <div class="row gy-4">
-          <div class="col-lg-4 col-md-6 footer-about">
-            <a href="index.html" class="logo d-flex align-items-center">
-              <span class="sitename">GP</span>
-            </a>
-            <div class="footer-contact pt-3">
-              <p>A108 Adam Street</p>
-              <p>New York, NY 535022</p>
-              <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-              <p><strong>Email:</strong> <span>info@example.com</span></p>
-            </div>
-            <div class="social-links d-flex mt-4">
-              <a href=""><i class="bi bi-twitter-x"></i></a>
-              <a href=""><i class="bi bi-facebook"></i></a>
-              <a href=""><i class="bi bi-instagram"></i></a>
-              <a href=""><i class="bi bi-linkedin"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Useful Links</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Home</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> About us</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Services</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Terms of service</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Privacy policy</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-2 col-md-3 footer-links">
-            <h4>Our Services</h4>
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Web Design</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Web Development</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Product Management</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Marketing</a></li>
-              <li><i class="bi bi-chevron-right"></i> <a href="#"> Graphic Design</a></li>
-            </ul>
-          </div>
-
-          <div class="col-lg-4 col-md-12 footer-newsletter">
-            <h4>Our Newsletter</h4>
-            <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-            <form action="forms/newsletter.php" method="post" class="php-email-form">
-              <div class="newsletter-form"><input type="email" name="email"><input type="submit" value="Subscribe"></div>
-              <div class="loading">Loading</div>
-              <div class="error-message"></div>
-              <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-            </form>
-          </div>
-
-        </div>
-      </div>
-    </div>
-
-    <div class="copyright">
-      <div class="container text-center">
-        <p>© <span>Copyright</span> <strong class="px-1 sitename">GP</strong> <span>All Rights Reserved</span></p>
-        <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you've purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-          Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-        </div>
-      </div>
-    </div>
-
-  </footer>
 
   
 
-{%endblock%}
+{% endblock %}
