@@ -6,10 +6,13 @@ services:
     container_name: web_alvin
     build:
       context: .
-#    ports:
-#      - "8081:8081"
+    ports:
+      - "8081:8000"
     volumes:
-      - .:/usr/src/backend/app
+      # - .:/usr/src/backend/app
+      - .:/app
+      - static-data:/static
+      - media-data:/media
     labels:
       - "traefik.enable=true"
       - "traefik.http.routers.web_alvin.rule=Host(`alvinandpartners.com`)"
@@ -21,3 +24,7 @@ services:
 networks:
   main_host:
     external: true
+
+volumes:
+  static-data:
+  media-data:
