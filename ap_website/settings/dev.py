@@ -13,6 +13,11 @@ CORS_ALLOWED_ORIGINS = [
     "https://alvinandpartners.com",
 ]
 
+CSRF_ALLOWED_ORIGINS = ["https://mysite.com"]
+CORS_ORIGINS_WHITELIST = ["https://mysite.com"]
+
+
+
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
