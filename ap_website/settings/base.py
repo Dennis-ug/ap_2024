@@ -20,16 +20,6 @@ BASE_DIR = os.path.dirname(PROJECT_DIR)
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
-DEBUG = False
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-)!v8dnm^=dg%2jzjbccq=4oz4qfxeqk08+n!cu3&uo+#p$um&1"
-ALLOWED_HOSTS = ["*"]
-# Application definition
-
-CORS_ALLOWED_ORIGINS = [
-    "https://alvinandpartners.com",
-]
 
 INSTALLED_APPS = [
     "home",
@@ -153,8 +143,8 @@ STATICFILES_DIRS = [
 STATIC_URL = "static/"
 MEDIA_URL = "media/"
 
-STATIC_ROOT = "/static/"
-MEDIA_ROOT = "/media/"
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default storage settings, with the staticfiles storage updated.
 # See https://docs.djangoproject.com/en/5.0/ref/settings/#std-setting-STORAGES
