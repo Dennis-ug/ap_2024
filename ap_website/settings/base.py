@@ -27,6 +27,10 @@ SECRET_KEY = "django-insecure-)!v8dnm^=dg%2jzjbccq=4oz4qfxeqk08+n!cu3&uo+#p$um&1
 ALLOWED_HOSTS = ["*"]
 # Application definition
 
+CORS_ALLOWED_ORIGINS = [
+    "https://alvinandpartners.com",
+]
+
 INSTALLED_APPS = [
     "home",
     "streams",
