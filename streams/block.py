@@ -24,10 +24,10 @@ class CustomBlock(StructBlock):
                 ("name", TextBlock(required=True, max_length=200)),
                 # ("button_page", blocks.PageChooserBlock(required=False)),
                 (
-                    "facebook",
+                    "whatsApp",
                     URLBlock(
                         required=False,
-                        help_text="Enter the link to facebook.",  # noqa
+                        help_text="Enter the link to whatsApp.",  # noqa
                     ),
                 ), (
                 "instagram",
@@ -89,41 +89,41 @@ class TestMonials(StructBlock):
 
     # title = CharBlock(required=True, help_text="Add your title")
 
-    cards = ListBlock(
-        StructBlock(
-            [
-                ("image", ImageChooserBlock(required=True)),
-                ("title", CharBlock(required=True, max_length=40)),
-                ("name", TextBlock(required=True, max_length=200)),
-                # ("button_page", blocks.PageChooserBlock(required=False)),
-                (
-                    "facebook",
-                    URLBlock(
-                        required=False,
-                        help_text="Enter the link to facebook.",  # noqa
-                    ),
-                ), (
-                "instagram",
-                URLBlock(
-                    required=False,
-                    help_text="Enter link to instagram",  # noqa
-                ),
-            ), (
-                "linkedin",
-                URLBlock(
-                    required=False,
-                    help_text="Enter link to linkedin",  # noqa
-                ),
-            ), (
-                "x",
-                URLBlock(
-                    required=False,
-                    help_text="Enter link to x",  # noqa
-                ),
-            ),
-            ]
-        )
-    )
+    # cards = ListBlock(
+    #     StructBlock(
+    #         [
+    #             ("image", ImageChooserBlock(required=True)),
+    #             ("title", CharBlock(required=True, max_length=40)),
+    #             ("name", TextBlock(required=True, max_length=200)),
+    #             # ("button_page", blocks.PageChooserBlock(required=False)),
+    #             (
+    #                 "WhatsApp",
+    #                 URLBlock(
+    #                     required=False,
+    #                     help_text="Enter the link to whatsApp.",  # noqa
+    #                 ),
+    #             ), (
+    #             "instagram",
+    #             URLBlock(
+    #                 required=False,
+    #                 help_text="Enter link to instagram",  # noqa
+    #             ),
+    #         ), (
+    #             "linkedin",
+    #             URLBlock(
+    #                 required=False,
+    #                 help_text="Enter link to linkedin",  # noqa
+    #             ),
+    #         ), (
+    #             "x",
+    #             URLBlock(
+    #                 required=False,
+    #                 help_text="Enter link to x",  # noqa
+    #             ),
+    #         ),
+    #         ]
+    #     )
+    # )
 
     # <a href=""><i class="bi bi-twitter-x"></i></a>
     #               <a href=""><i class="bi bi-facebook"></i></a>
@@ -145,4 +145,4 @@ class RichtextBlock(blocks.RichTextBlock):
     class Meta:  # noqa
         template = "streams/richtext_block.html"
         icon = "doc-full"
-        label = "Project details"
+        label = " Details"
