@@ -55,6 +55,7 @@ class HomePage(Page):
         FieldPanel("about_company_achievements"),
         FieldPanel("profile"),
         FieldPanel("image_company_achievements")
+        FieldPanel("back_ground_photo")
 
     ]
 
