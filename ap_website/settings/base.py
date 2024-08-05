@@ -24,6 +24,9 @@ CSRF_TRUSTED_ORIGINS = ["https://alvinandpartners.com"]
 
 INSTALLED_APPS = [
     "home",
+    "footer",
+    "Portfolio",
+    "service",
     "streams",
     "search",
     "wagtail.contrib.forms",

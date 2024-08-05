@@ -1,0 +1,15 @@
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+
+{% for photo in self.photos %}
+
+    <div class="swiper-slide">
+        {% image photo.image fill-1024x768 as img %}
+        <img src={{img.url}} alt="">
+    </div>
+
+{% endfor %}
+
+
+1024×768
