@@ -16,6 +16,10 @@ class HomePage(Page):
 
     banner_title = models.CharField(max_length=100, blank=False, null=True)
     banner_sub_title = models.CharField(max_length=100, blank=False, null=True)
+    back_ground_photo = models.ForeignKey("wagtailimages.Image", blank=True, null=True,
+                                          on_delete=models.SET_NULL,
+                                          related_name="+"
+                                          )
     about_information = StreamField([
 
         ("details", block.RichtextBlock()),
