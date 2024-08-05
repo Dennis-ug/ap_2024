@@ -17,7 +17,7 @@ class Portfolio(Page):
     project_category = models.CharField(max_length=5000, null=True, blank=False)
     project_client = models.CharField(max_length=5000, null=True, blank=False)
     project_date = models.DateField(max_length=5000, null=True, blank=False)
-    project_URL = models.URLField(max_length=5000, null=True, blank=False)
+    project_URL = models.URLField(max_length=5000, null=True, blank=True)
     project_thumbnail = models.ForeignKey("wagtailimages.Image", blank=True, null=True, on_delete=models.SET_NULL)
     project_details = StreamField([
 
