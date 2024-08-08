@@ -3,6 +3,7 @@ from wagtail.admin.panels import FieldPanel
 from wagtail.fields import StreamField
 from wagtail.models import Page
 
+
 from streams import block
 
 
@@ -16,8 +17,8 @@ class Service(Page):
 
     ],
         null=True,
-        blank=True,)
-        # models.TextField(max_length=5000, blank=False, null=True)
+        blank=True, )
+    # models.TextField(max_length=5000, blank=False, null=True)
     service_image = models.ForeignKey("wagtailimages.Image", blank=True, null=True, on_delete=models.SET_NULL
                                       )
     #
@@ -28,4 +29,12 @@ class Service(Page):
         FieldPanel("service_image"),
 
     ]
-# Create your models here.
+
+    # Create your models here.
+
+    def get_context(self, request, *args, **kwargs):
+        from home.models import HomePage
+        context = super().get_context(request, *args, **kwargs)
+        context["home"] = HomePage.objects.live().public().first()
+
+        return context

@@ -7,12 +7,25 @@
                     <a href="/" class="logo d-flex align-items-center">
                         <span class="sitename">AP</span>
                     </a>
-<!--                    <div class="footer-contact pt-3">-->
-<!--                        &lt;!&ndash;                            <p>A108 Adam Street</p>&ndash;&gt;-->
-<!--                        <p>{{page.address}}</p>-->
-<!--                        <p class="mt-3"><strong>Phone:</strong> <span>{{page.contact}}</span></p>-->
-<!--                        <p><strong>Email:</strong> <span>{{page.email}}</span></p>-->
-<!--                    </div>-->
+                    <div class="footer-contact pt-3">
+                        {% if not home %}
+                            {% with page as x %}
+                                <p>{{x.address}}</p>
+                                <p class="mt-3"><strong>Phone: </strong> <span>{{x.contact}}</span></p>
+                                <p><strong>Email: </strong> <span>{{x.email}}</span></p>
+                            {% endwith %}
+                        {% endif %}
+
+                        {% if home %}
+                            <p>{{home.address}}</p>
+                            <p class="mt-3"><strong>Phone: </strong> <span>{{home.contact}}</span></p>
+                            <p><strong>Email: </strong> <span>{{home.email}}</span></p>
+                        {% endif %}
+
+
+                        <!--                            <p>A108 Adam Street</p>-->
+
+                    </div>
                     <div class="social-links d-flex mt-4">
                         <a href=""><i class="bi bi-twitter-x"></i></a>
                         <a href=""><i class="bi bi-whatsapp"></i></a>
@@ -73,3 +86,5 @@
     </div>
 
 </footer>
+
+
