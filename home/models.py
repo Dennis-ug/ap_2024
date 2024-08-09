@@ -38,8 +38,8 @@ class HomePage(Page):
     contact = models.CharField(max_length=100, blank=False, null=True)
     email = models.CharField(max_length=100, blank=False, null=True)
     address = models.CharField(max_length=100, blank=False, null=True)
-    happy_clients = models.IntegerField(blank=False, null=True)
-    project = models.IntegerField(blank=False, null=True)
+    happy_clients_number = models.IntegerField(blank=False, null=True)
+    projects_number = models.IntegerField(blank=False, null=True)
     support_hours = models.IntegerField(blank=False, null=True)
     hard_workers = models.IntegerField(blank=False, null=True)
     profile = models.FileField(upload_to="uploads", null=True, blank=True)
@@ -73,7 +73,11 @@ class HomePage(Page):
         FieldPanel("image_company_achievements"),
         FieldPanel("back_ground_photo"),
         FieldPanel("about_photo"),
-        FieldPanel("testimonial")
+        FieldPanel("testimonial"),
+        FieldPanel("happy_clients_number"),
+        FieldPanel("projects_number"),
+        FieldPanel("support_hours"),
+        FieldPanel("hard_workers")
 
     ]
 
