@@ -1,0 +1,26 @@
+{% load wagtailimages_tags %}
+{% load wagtailcore_tags %}
+
+
+{% for testimony in self.clients_testimony %}
+
+{% image testimony.image fill-600x600 as img %}
+    <div class="swiper-slide">
+        <div class="testimonial-item">
+            <img src={{img.url}} class="testimonial-img" alt="">
+            <h3>{{testimony.name}}</h3>
+            <h4>{{testimony.title}}</h4>
+            <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>{{testimony.testimony}}.</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+            </p>
+        </div>
+    </div><!-- End testimonial item -->
+
+{% endif %}
+
+

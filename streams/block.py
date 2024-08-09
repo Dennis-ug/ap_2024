@@ -84,46 +84,20 @@ class CustomImageBlock(StructBlock):
         label = "Project photo"
 
 
-class TestMonials(StructBlock):
-    """Cards with image and text and button(s)."""
+class TestimonialBlock(StructBlock):
+    """Testimonial with image and text and button(s)."""
 
-    # title = CharBlock(required=True, help_text="Add your title")
+    clients_testimony = ListBlock(
+        StructBlock(
+            [
+                ("image", ImageChooserBlock(required=True)),
+                ("title", CharBlock(required=True, max_length=40)),
+                ("name", TextBlock(required=True, max_length=200)),
+                ("testimony", TextBlock(required=True, max_length=200)),
 
-    # cards = ListBlock(
-    #     StructBlock(
-    #         [
-    #             ("image", ImageChooserBlock(required=True)),
-    #             ("title", CharBlock(required=True, max_length=40)),
-    #             ("name", TextBlock(required=True, max_length=200)),
-    #             # ("button_page", blocks.PageChooserBlock(required=False)),
-    #             (
-    #                 "WhatsApp",
-    #                 URLBlock(
-    #                     required=False,
-    #                     help_text="Enter the link to whatsApp.",  # noqa
-    #                 ),
-    #             ), (
-    #             "instagram",
-    #             URLBlock(
-    #                 required=False,
-    #                 help_text="Enter link to instagram",  # noqa
-    #             ),
-    #         ), (
-    #             "linkedin",
-    #             URLBlock(
-    #                 required=False,
-    #                 help_text="Enter link to linkedin",  # noqa
-    #             ),
-    #         ), (
-    #             "x",
-    #             URLBlock(
-    #                 required=False,
-    #                 help_text="Enter link to x",  # noqa
-    #             ),
-    #         ),
-    #         ]
-    #     )
-    # )
+            ]
+        )
+    )
 
     # <a href=""><i class="bi bi-twitter-x"></i></a>
     #               <a href=""><i class="bi bi-facebook"></i></a>
@@ -131,7 +105,7 @@ class TestMonials(StructBlock):
     #               <a href=""><i class="bi bi-linkedin"></i></a>
 
     class Meta:  # noqa
-        template = "streams/staff_card.html"
+        template = "streams/testimonials.html"
         icon = "placeholder"
         label = "Staff Cards"
 

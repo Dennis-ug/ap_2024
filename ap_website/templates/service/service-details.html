@@ -15,7 +15,7 @@
         <div class="container">
           <div class="row d-flex justify-content-center text-center">
             <div class="col-lg-8">
-              <h1>Service Details</h1>
+              <h1>{{self.service_name}}</h1>
               <p class="mb-0">{{self.service_summary}}</p>
             </div>
           </div>
@@ -25,7 +25,7 @@
         <div class="container">
           <ol>
             <li><a href="/">Home</a></li>
-            <li class="current">Service Details</li>
+            <li class="current">{{self.service_name}}</li>
           </ol>
         </div>
       </nav>
@@ -44,8 +44,8 @@
             <div class="service-box">
               <h4>Download Catalog</h4>
               <div class="download-catalog">
-                <a href="#"><i class="bi bi-filetype-pdf"></i><span>Get quotation PDF</span></a>
-                <a href="#"><i class="bi bi-file-earmark-word"></i><span>Get quotation DOC</span></a>
+                <a href={{self.quotation_pdf.url}}><i class="bi bi-filetype-pdf"></i><span>Get quotation PDF</span></a>
+                <a href={{self.quotation_doc.url}}><i class="bi bi-file-earmark-word"></i><span>Get quotation DOC</span></a>
               </div>
             </div><!-- End Services List -->
 

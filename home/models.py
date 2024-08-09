@@ -21,9 +21,9 @@ class HomePage(Page):
                                           related_name="+"
                                           )
     about_photo = models.ForeignKey("wagtailimages.Image", blank=True, null=True,
-                                          on_delete=models.SET_NULL,
-                                          related_name="+"
-                                          )
+                                    on_delete=models.SET_NULL,
+                                    related_name="+"
+                                    )
     about_information = StreamField([
 
         ("details", block.RichtextBlock()),
@@ -32,12 +32,24 @@ class HomePage(Page):
         null=True,
         blank=False, )
     about_company_achievements = models.TextField(max_length=5000, blank=False, null=True)
-    image_company_achievements = models.ForeignKey("wagtailimages.Image", blank=True, null=True, on_delete=models.SET_NULL
-                                                          )
+    image_company_achievements = models.ForeignKey("wagtailimages.Image", blank=True, null=True,
+                                                   on_delete=models.SET_NULL
+                                                   )
     contact = models.CharField(max_length=100, blank=False, null=True)
     email = models.CharField(max_length=100, blank=False, null=True)
     address = models.CharField(max_length=100, blank=False, null=True)
-    profile = models.FileField( upload_to="uploads", null=True, blank=True)
+    happy_clients = models.IntegerField(blank=False, null=True)
+    project = models.IntegerField(blank=False, null=True)
+    support_hours = models.IntegerField(blank=False, null=True)
+    hard_workers = models.IntegerField(blank=False, null=True)
+    profile = models.FileField(upload_to="uploads", null=True, blank=True)
+    testimonial = StreamField([
+        ("testimonials", block.TestimonialBlock())
+        , ],
+
+        null=True,
+        blank=True,
+    )
 
     content = StreamField(
         [
@@ -60,7 +72,8 @@ class HomePage(Page):
         FieldPanel("profile"),
         FieldPanel("image_company_achievements"),
         FieldPanel("back_ground_photo"),
-        FieldPanel("about_photo")
+        FieldPanel("about_photo"),
+        FieldPanel("testimonial")
 
     ]
 
