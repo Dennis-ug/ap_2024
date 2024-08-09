@@ -107,7 +107,7 @@ class TestimonialBlock(StructBlock):
     class Meta:  # noqa
         template = "streams/testimonials.html"
         icon = "placeholder"
-        label = "Staff Cards"
+        label = "Testimonial"
 
 
 class RichtextBlock(blocks.RichTextBlock):
