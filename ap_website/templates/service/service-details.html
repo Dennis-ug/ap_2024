@@ -44,8 +44,19 @@
             <div class="service-box">
               <h4>Download Catalog</h4>
               <div class="download-catalog">
-                <a href="{{self.quotation_pdf.url}}"><i class="bi bi-filetype-pdf"></i><span>Get quotation PDF</span></a>
-                <a href="{{self.quotation_doc.url}}"><i class="bi bi-file-earmark-word"></i><span>Get quotation DOC</span></a>
+                {% if self.quotation_pdf %}
+                  <a href="{{self.quotation_pdf.url}}"><i class="bi bi-filetype-pdf"></i><span>Get quotation PDF</span></a>
+                {% else %}
+                  <a href=" "><i class="bi bi-filetype-pdf"></i><span>No quotation PDF</span></a>
+                {% endif %}
+
+                {% if self.quotation_pdf %}
+                  <a href="{{self.quotation_doc.url}}"><i class="bi bi-file-earmark-word"></i><span>Get quotation DOC</span></a>
+                {% else %}
+                  <a href=""><i class="bi bi-filetype-pdf"></i><span>No quotation DOC</span></a>
+                {% endif %}
+
+
               </div>
             </div><!-- End Services List -->
 
